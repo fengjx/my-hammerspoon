@@ -8,7 +8,7 @@ local application = require "hs.application"
 
 local key2App = {
     g = "Google Chrome",
-    s = "System Preferences",
+    s = "Sourcetree",
     t = "iTerm",
     y = "网易有道词典",
     k = "KeeWeb",
