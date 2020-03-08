@@ -1,0 +1,10 @@
+require("config")
+require("modules.hello_world")
+require("modules.launch")
+require("modules.window")
+require("modules.search")
+require("modules.pwd")
+require("modules.aria2")
+require("modules.sheet")
+require("modules.keybindings")
+
