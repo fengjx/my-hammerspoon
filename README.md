@@ -4,7 +4,19 @@
 - Spoons 插件
 
 
-### 用法
+## Get started
+
+1. Install [Hammerspoon](http://www.hammerspoon.org/) first.
+
+2. `git clone https://github.com/ashfinal/awesome-hammerspoon.git ~/.hammerspoon`
+
+3. Reload the configutation.
+
+## Keep update
+
+`cd ~/.hammerspoon && git pull`
+
+### usage
 
 ![keybindings](keybindings.png)
 
