@@ -8,7 +8,7 @@
 
 1. Install [Hammerspoon](http://www.hammerspoon.org/) first.
 
-2. `git clone git@github.com:fengjx/my-hammerspoon.git ~/.hammerspoon`
+2. `git clone https://github.com/fengjx/my-hammerspoon.git ~/.hammerspoon`
 
 3. Reload the configutation.
 
