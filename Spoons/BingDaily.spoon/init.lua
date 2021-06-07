@@ -14,11 +14,13 @@ obj.author = "ashfinal <ashfinal@gmail.com>"
 obj.homepage = "https://github.com/Hammerspoon/Spoons"
 obj.license = "MIT - https://opensource.org/licenses/MIT"
 
+local bing_daily_dir = os.getenv("HOME") .. "/.BingDaily/"
+
 local function curl_callback(exitCode, stdOut, stdErr)
     if exitCode == 0 then
         obj.task = nil
         obj.last_pic = obj.file_name
-        local localpath = os.getenv("HOME") .. "/.Trash/" .. obj.file_name
+        local localpath = bing_daily_dir .. obj.file_name
         hs.screen.mainScreen():desktopImageURL("file://" .. localpath)
     else
         print(stdOut, stdErr)
@@ -47,7 +49,7 @@ local function bingRequest()
                         obj.task:terminate()
                         obj.task = nil
                     end
-                    local localpath = os.getenv("HOME") .. "/.Trash/" .. obj.file_name
+                    local localpath = bing_daily_dir .. obj.file_name
                     obj.task = hs.task.new("/usr/bin/curl", curl_callback, {"-A", user_agent_str, obj.full_url, "-o", localpath})
                     obj.task:start()
                 end
@@ -59,6 +61,14 @@ local function bingRequest()
 end
 
 function obj:init()
+    local file = io.open(bing_daily_dir, "rb")
+    if not file then
+        local cmd = "mkdir -p " .. bing_daily_dir
+        print(cmd)
+        os.execute(cmd)
+    else
+        file:close()
+    end
     if obj.timer == nil then
         obj.timer = hs.timer.doEvery(3*60*60, function() bingRequest() end)
         obj.timer:setNextTrigger(5)
