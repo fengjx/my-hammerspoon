@@ -26,6 +26,85 @@ hotkey.bind(
     end
 )
 
+-- 4:6分
+hotkey.bind(
+    hyperCmd,
+    "4",
+    "left 0.4",
+    function()
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+
+        f.x = max.x
+        f.y = max.y
+        f.w = max.w * 0.4
+        f.h = max.h
+        win:setFrame(f)
+    end
+)
+
+-- 4:6分
+hotkey.bind(
+    hyperCmd,
+    "6",
+    "right 0.6",
+    function()
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+        
+        -- {x=cres.x+cres.w/2, y=cres.y, w=cres.w/2, h=cres.h}
+
+
+        f.x = max.x+max.w * 0.4
+        f.y = max.y
+        f.w = max.w * 0.6
+        f.h = max.h
+        win:setFrame(f)
+    end
+)
+
+-- 4:6分
+hotkey.bind(
+    hyperCmd,
+    "3",
+    "left 0.3",
+    function()
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+
+        f.x = max.x
+        f.y = max.y
+        f.w = max.w * 0.3
+        f.h = max.h
+        win:setFrame(f)
+    end
+)
+
+-- 3:7分
+hotkey.bind(
+    hyperCmd,
+    "7",
+    "right 0.7",
+    function()
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+
+        f.x = max.x+max.w * 0.3
+        f.y = max.y
+        f.w = max.w * 0.7
+        f.h = max.h
+        win:setFrame(f)
+    end
+)
+
 -- 居中
 hotkey.bind(
     hyper,
